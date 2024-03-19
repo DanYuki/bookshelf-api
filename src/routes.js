@@ -2,24 +2,18 @@ const express = require('express');
 
 const router = express.Router();
 
-router.post('/books', (req, res) => {
-    // This will handle adding new book
-    console.log(req);
-    return 0;
-});
+const handler = require('./handler');
 
-router.get('/books', (req, res) => {
-    // This will handle getting all available books
-});
+router.post('/books', handler.storeBook);
 
-router.get('/books/:bookId', () => {
-    // This will handle getting specific book details
-});
+router.get('/books', handler.getAllBooks);
 
-router.put('/books/:bookId', () => {
-    // This will handle editing a book by its id
-});
+router.get('/books/:bookId', handler.getBookById);
 
-router.delete('/books/:bookId', () => {
-    // This will handle deleting a book by its id
-});
+router.put('/books/:bookId', handler.editBookById);
+
+router.delete('/books/:bookId', handler.eleteBookById);
+
+module.exports = {
+    router,
+};
