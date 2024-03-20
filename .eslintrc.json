@@ -10,6 +10,13 @@
     },
     "rules": {
         "linebreak-style": ["error", "windows"],
-        "indent": "off"
+        "indent": "off",
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ]
     }
 }

@@ -1,19 +1,17 @@
 const express = require('express');
 
-const router = express.Router();
-
 const handler = require('./handler');
+
+const router = express.Router();
 
 router.post('/books', handler.storeBook);
 
 router.get('/books', handler.getAllBooks);
 
-router.get('/books/:bookId', handler.getBookById);
+router.get('/books/:id', handler.getBookById);
 
-router.put('/books/:bookId', handler.editBookById);
+router.put('/books/:id', handler.editBookById);
 
-router.delete('/books/:bookId', handler.eleteBookById);
+router.delete('/books/:id', handler.deleteBookById);
 
-module.exports = {
-    router,
-};
+module.exports = router;
